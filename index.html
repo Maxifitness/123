@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fake Facebook Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <div class="fb-logo"><img src="Facebook-logo.png"></div>
+        <div class="main-content">
+            <span class="log-in-fb">Log into Facebook</span>
+            <input type="text" placeholder="Email or mobile number" id="email">
+            <input type="text" placeholder="Password" id="password">
+            <span class="incorrect" id="incorrectError"></span>
+            <button class="log-in-button" onclick="
+
+            let inputEmail = document.getElementById ('email').value;
+
+            let inputPassword = document.getElementById ('password').value;
+
+            let Email = '123@gmail.com';
+
+            let Password = '';
+
+            let savedPass = localStorage.getItem('newestPass');
+
+            if(savedPass === '') {Password = '12345678';} else { Password === savedPass;}
+            if ( Email === inputEmail && Password === inputPassword || savedPass === inputPassword) {window.location.href = 'finally-logged-in.html';}
+            else if  (Email != inputEmail || Password != inputPassword || savedPass != inputPassword) {document.getElementById('incorrectError').innerText ='Incorrect Email or Password'; document.getElementById('incorrectError').style.display='block';}
+            ">Log in</button>
+
+            <button class="forgot-password" onclick="
+
+            let inputEmail = document.getElementById ('email').value;
+
+            let inputPassword = document.getElementById ('password').value;
+
+            let Email = '123@gmail.com';
+
+            let Password = '12345678';
+            
+            if (Email === inputEmail && Password != inputPassword) {window.location.href = 'forgot-password.html'}
+            ">Forgot Password?</button>
+        </div>
+
+        <style>
+
+            body{
+                padding-top: 100px;
+                position: relative;
+            }
+
+            .fb-logo{
+                display: flex;
+                flex-direction: row;
+                justify-self: center;
+                padding-bottom: 80px;
+            }
+            .main-content{
+                display: grid;
+                grid-template-rows: repeat(6,50px);
+                row-gap: 20px;
+                justify-self: center;
+            }
+
+
+            .log-in-fb{
+                font-family: Arial;
+                font-size: 20px;
+            }
+
+            input{
+                border-color: solid gray;
+                border-radius: 10px;
+                padding-left: 20px;
+                width: 400px;
+            }
+
+            input:focus{
+                border-color: 1px solid rgb(214, 212, 212);
+            }
+
+            .incorrect{
+                font-family: Arial;
+                font-size: 13px;
+                color: rgb(222, 76, 76);
+                display: none;
+            }
+
+            .log-in-button{
+                background-color:rgb(24 119 242);
+                color: white;
+                border:none;
+                border-radius: 40px;
+                width: 430px;
+            }
+
+            .log-in-button:hover{
+                background-color: rgb(21, 105, 216);
+            }
+
+            img{
+                height: 60px;
+                justify-self: center;
+            }
+
+            .forgot-password{
+                background-color: white;
+                border:none;
+                border-radius: 40px;
+                width: 430px;
+            }
+
+            .forgot-password:hover{
+                background-color: rgb(232, 231, 231);
+            }
+
+            @keyframes slideDown {
+                from{
+                    trasform: translateY(-50%, -100%);
+                    opacity:0;
+                }
+                to{
+                    transform: translateY(-50%, 20%);
+                    opacity:1;
+                }
+            }
+
+            @media (max-width: 600px) {
+                .main-content{
+            
+                }
+
+                .log-in-fb{
+
+                }
+
+                input{
+                    width: 280px;
+
+                }
+
+                .log-in-button{
+                    width: 310px;
+                }
+
+                .forgot-password{
+                    width: 310px;
+                }
+            }
+        </style>
+
+        <script>
+        
+        </script>
+    </body>
+</html>

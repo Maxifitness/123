@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fake Facebook Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <div class="container" id="fake">
+        <div class="fake-email-container">
+            <div class="left">
+                <img src="email.webp">
+            </div>
+            <div class="right">
+                <div class="top">
+                    <span class="sender">Facebook</span>
+                </div>
+                <div class="bottom">
+                    <span class="message">We recieved a request to reset your password. Your verification code is: 123456</span>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="main-content">
+            <span class="find-your-account">Confirm your account</span>
+            <span class="enter">We sent a code via email. Enter that code to confirm your account.</span>
+            <input type="text" placeholder="Enter code" id="code">
+            <button class="save" onclick="
+
+            let codeSent = document.getElementById ('code').value;
+
+            let Code = '123456';
+            
+            if (Code === codeSent) {window.location.href='changepassword.html';}
+            ">Continue</button>
+        </div>
+
+        <style>
+
+            .container{
+                display: block;
+            }
+
+            .fake-email-container{
+                background-color: white;
+                display: grid;
+                grid-template-columns: 120px 280px;
+                justify-self: center;
+                box-shadow: 0px 0px 1px rgb(0,0,0,0.5);
+                border-radius: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                position: absolute;
+                animation: slideDown 0.7s ease-out forwards;
+            }
+
+             img{
+                height: 60px;
+                justify-self: center;
+            }
+
+            .right{
+                display: grid;
+                grid-template-rows: 30px 20px;
+            }
+
+            .sender{
+                font-family: Arial;
+                font-weight: bold;
+            }
+
+            .message{
+                font-family: Arial;
+                font-size: 14px;
+            }
+
+            .main-content{
+                display:grid;
+                grid-template-rows:35px 20px 55px 55px;
+                padding-top: 100px;
+                justify-self: center;
+                row-gap: 15px;
+            }
+
+            .find-your-account{
+                font-family: Arial;
+                font-size: 30px;
+                font-weight: 400;
+            }
+
+            .enter{
+                font-family:Arial;
+                font-size: 14px;
+
+            }
+
+            input{
+                border-color: solid gray;
+                border-radius: 10px;
+                padding-left: 20px;
+                width: 400px;
+            }
+
+            button{
+                background-color:rgb(24 119 242);
+                color: white;
+                border:none;
+                border-radius: 40px;
+                width: 430px;
+            }
+
+            @media (max-width: 600px){
+
+                .container{
+                    width: 300px;
+                    display: flex;
+                    flex-direction:row;
+                    justify-self: start;
+                }
+
+                .fake-email-container{
+                    grid-template-columns: 120px 200px ;
+                }
+
+                img{
+                    width: 90px;
+                    height: 80px;
+                }
+
+                .main-content{
+                    grid-template-rows: 30px 90px 50px;
+                    padding-top: 200px;
+                }
+
+                .enter{
+                    width: 300px;
+                }
+
+                input{
+                    width: 300px;
+                }
+                button{
+                    width: 330px;
+                    height: 40px;
+                }
+            }
+        </style>
+    </body>
+</html>
